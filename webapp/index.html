@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPERAZIONE ARCA - Escape Room Game Master</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>🕵️ OPERAZIONE ARCA</h1>
+                <p>Escape Room per Agenti Speciali - Game Master Panel</p>
+            </div>
+            <div class="info-agenti">
+                <span class="agente falco">🦅 FALCO: Miriam (12)</span>
+                <span class="agente lince">🐆 LINCE: Laura (9)</span>
+            </div>
+        </header>
+
+        <main>
+            <!-- CRONOMETRO E STATO -->
+            <section class="control-panel">
+                <div class="timer-section">
+                    <h2>⏱️ Cronometro</h2>
+                    <div class="timer" id="timer">00:00:00</div>
+                    <div class="button-group">
+                        <button id="startBtn" class="btn btn-start">▶️ Avvia</button>
+                        <button id="pauseBtn" class="btn btn-pause" disabled>⏸️ Pausa</button>
+                        <button id="resetBtn" class="btn btn-reset">🔄 Reset</button>
+                    </div>
+                    <p class="timer-info">Durata stimata: 70-85 minuti</p>
+                </div>
+
+                <div class="phase-section">
+                    <h2>📊 Fase Attuale</h2>
+                    <div class="phase-display" id="phaseDisplay">FASE 1 - INSIEME</div>
+                    <div class="phase-buttons">
+                        <button class="btn btn-phase active" data-phase="1">FASE 1</button>
+                        <button class="btn btn-phase" data-phase="2">FASE 2</button>
+                        <button class="btn btn-phase" data-phase="3">FASE 3</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TABS NAVIGAZIONE -->
+            <nav class="tabs">
+                <button class="tab-button active" data-tab="enigmi">🧩 Enigmi</button>
+                <button class="tab-button" data-tab="codici">🔐 Codici</button>
+                <button class="tab-button" data-tab="percorsi">🗺️ Percorsi</button>
+                <button class="tab-button" data-tab="checklist">✅ Checklist</button>
+                <button class="tab-button" data-tab="aiuti">🆘 Aiuti</button>
+            </nav>
+
+            <!-- TAB: ENIGMI -->
+            <section id="enigmi-tab" class="tab-content active">
+                <h2>🧩 Enigmi Tracker</h2>
+                <div class="enigmi-container" id="enigmiContainer"></div>
+            </section>
+
+            <!-- TAB: CODICI -->
+            <section id="codici-tab" class="tab-content">
+                <h2>🔐 Tutti i Codici (Riservato GM)</h2>
+                <div class="codici-table">
+                    <table id="codiciBattle">
+                        <thead>
+                            <tr>
+                                <th>Serratura</th>
+                                <th>Codice</th>
+                                <th>Dove</th>
+                                <th>Aperti?</th>
+                            </tr>
+                        </thead>
+                        <tbody id="codiciBattleBody"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- TAB: PERCORSI -->
+            <section id="percorsi-tab" class="tab-content">
+                <h2>🗺️ Mappa Percorsi</h2>
+                <div class="percorsi-grid">
+                    <div class="percorso-card falco">
+                        <h3>🦅 PERCORSO FALCO - Miriam</h3>
+                        <p><strong>Zone:</strong> Cameretta 1 + Corridoio</p>
+                        <div class="enigmi-list" id="falcoEnigmi"></div>
+                    </div>
+                    <div class="percorso-card lince">
+                        <h3>🐆 PERCORSO LINCE - Laura</h3>
+                        <p><strong>Zone:</strong> Cameretta 2 + Bagno</p>
+                        <div class="enigmi-list" id="linceEnigmi"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB: CHECKLIST -->
+            <section id="checklist-tab" class="tab-content">
+                <h2>✅ Checklist Allestimento</h2>
+                <div class="checklist-container" id="checklistContainer"></div>
+            </section>
+
+            <!-- TAB: AIUTI -->
+            <section id="aiuti-tab" class="tab-content">
+                <h2>🆘 Sistema Aiuti Graduali</h2>
+                <div class="aiuti-container" id="aiutiContainer"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>🎮 OPERAZIONE ARCA - Escape Room Completo | Genitori con Miriam (12) e Laura (9)</p>
+            <p>Durata: 70-85 minuti | Tema: Recuperare l'ARCA dai Pirata VULTURE</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
